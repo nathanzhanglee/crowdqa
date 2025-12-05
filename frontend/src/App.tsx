@@ -62,7 +62,7 @@ export default function App() {
     if (!currentSession) return;
 
     try {
-      const res = await fetch(`http://localhost:3001/api/sessions/${currentSession.session_id}/end`, {
+      const res = await fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${currentSession.session_id}/end`, {
         method: 'PUT'
       });
 

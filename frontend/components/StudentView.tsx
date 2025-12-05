@@ -33,7 +33,7 @@ export function StudentView({ session, clickCount, onConfusionClick, onExit, isS
     let mounted = true;
     const check = async () => {
       try {
-        const res = await fetch(`http://localhost:3001/api/sessions/${session.session_id}`);
+        const res = await fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}`);
         if (!res.ok) return;
         const data = await res.json();
         if (!mounted) return;
@@ -63,7 +63,7 @@ export function StudentView({ session, clickCount, onConfusionClick, onExit, isS
     try {
       // 1. Send click to backend
       const clickRes = await fetch(
-        `http://localhost:3001/api/sessions/${session.session_id}/click`,
+        `https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}/click`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -81,7 +81,7 @@ export function StudentView({ session, clickCount, onConfusionClick, onExit, isS
       // 2. If note exists, send it
       if (note.trim() !== "") {
         await fetch(
-          `http://localhost:3001/api/sessions/${session.session_id}/notes`,
+          `https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}/notes`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

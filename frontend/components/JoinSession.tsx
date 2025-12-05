@@ -31,7 +31,7 @@ export function JoinSession({ onBack, onJoinSuccess }: JoinSessionProps) {
     }
 
     try {
-      const res = await fetch(`http://localhost:3001/api/sessions/${code}/join`, {
+      const res = await fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${code}/join`, {
         method: "POST",
         headers: { "Content-Type": "application/json" }
       });

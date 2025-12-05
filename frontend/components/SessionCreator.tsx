@@ -33,7 +33,7 @@ export function SessionCreator({ onCreateSession, onBack }: SessionCreatorProps)
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3001/api/sessions", {
+      const res = await fetch("https://crowdqa-hxre.onrender.com/api/sessions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -73,7 +73,7 @@ export function SessionCreator({ onCreateSession, onBack }: SessionCreatorProps)
     const doStart = async () => {
       if (!generatedSession) return;
       try {
-        const res = await fetch(`http://localhost:3001/api/sessions/${generatedSession.session_id}/start`, {
+        const res = await fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${generatedSession.session_id}/start`, {
           method: 'PUT'
         });
 

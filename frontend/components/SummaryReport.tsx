@@ -53,15 +53,15 @@ export function SummaryReport({ sessionId, onBack, onHome }: SummaryReportProps)
   useEffect(() => {
     const loadAll = async () => {
       const metaRes = await fetch(
-        `http://localhost:3001/api/sessions/${sessionId}`
+        `https://crowdqa-hxre.onrender.com/api/sessions/${sessionId}`
       ).then(r => r.json());
 
       const analysisRes = await fetch(
-        `http://localhost:3001/api/sessions/${sessionId}/analysis`
+        `https://crowdqa-hxre.onrender.com/api/sessions/${sessionId}/analysis`
       ).then(r => r.json());
 
       const noteRes = await fetch(
-        `http://localhost:3001/api/sessions/${sessionId}/notes`
+        `https://crowdqa-hxre.onrender.com/api/sessions/${sessionId}/notes`
       ).then(r => r.json());
 
       setSession(metaRes);

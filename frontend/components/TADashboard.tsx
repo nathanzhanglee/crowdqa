@@ -39,10 +39,10 @@ export function TADashboard({ session, onBack, onViewSummary }: TADashboardProps
   useEffect(() => {
     const fetchAll = async () => {
       const [clickRes, noteRes, binRes, studentRes] = await Promise.all([
-        fetch(`http://localhost:3001/api/sessions/${session.session_id}/clicks`).then(r => r.json()),
-        fetch(`http://localhost:3001/api/sessions/${session.session_id}/notes`).then(r => r.json()),
-        fetch(`http://localhost:3001/api/sessions/${session.session_id}/click-intervals`).then(r => r.json()),
-        fetch(`http://localhost:3001/api/sessions/${session.session_id}/active-students`).then(r => r.json())
+        fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}/clicks`).then(r => r.json()),
+        fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}/notes`).then(r => r.json()),
+        fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}/click-intervals`).then(r => r.json()),
+        fetch(`https://crowdqa-hxre.onrender.com/api/sessions/${session.session_id}/active-students`).then(r => r.json())
       ]);
 
       setClicks(clickRes.clicks || []);
